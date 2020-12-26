@@ -3,6 +3,9 @@ import datetime
 
 db = SqliteDatabase("/home/pi/sensor_data.db")
 
+def ts():
+    return int(datetime.datetime.now().strftime('%s'))
+
 class Reading(Model):
     data_format = SmallIntegerField()
     humidity = FloatField()
@@ -18,7 +21,7 @@ class Reading(Model):
     measurement_sequence_number = IntegerField()
     mac = TextField()
     
-    time_created = IntegerField(default=int(datetime.datetime.now().strftime('%s')))
+    time_created = IntegerField(default=ts())
 
     class Meta:
         database = db
