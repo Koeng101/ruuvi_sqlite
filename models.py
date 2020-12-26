@@ -21,7 +21,7 @@ class Reading(Model):
     measurement_sequence_number = IntegerField()
     mac = TextField()
     
-    time_created = IntegerField(default=ts())
+    time_created = IntegerField(default=ts)
 
     class Meta:
         database = db
