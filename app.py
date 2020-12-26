@@ -10,8 +10,8 @@ macs = [
 mac_dict = {}
 for mac in macs:
     mac_obj, created = Sensor.get_or_create(mac=mac)
+    mac_obj.save()
     mac_dict[mac] = mac_obj
-db.save()
 
 # Empirically, 10 seconds has approximately been the right amount of time to wait per measurement
 timeout = 10 
