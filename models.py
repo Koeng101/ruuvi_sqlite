@@ -18,7 +18,7 @@ class Reading(Model):
     measurement_sequence_number = IntegerField()
     mac = TextField()
     
-    time_created = IntegerField(default=int(datetime.now().strftime('%s')))
+    time_created = IntegerField(default=int(datetime.datetime.now().strftime('%s')))
 
     class Meta:
         database = db
