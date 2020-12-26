@@ -9,7 +9,7 @@ macs = [
 
 mac_dict = {}
 for mac in macs:
-    mac_obj, created = Sensor.get_or_create(mac=mac, force_insert=True)
+    mac_obj, created = Sensor.get_or_create(mac=mac)
     mac_dict[mac] = mac_obj
 db.save()
 

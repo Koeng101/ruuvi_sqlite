@@ -9,7 +9,7 @@ class BaseModel(Model):
         database = db
 
 class Sensor(BaseModel):
-    mac = TextField(primary_key=True)
+    mac = TextField()
 
 class Reading(BaseModel):
     data_format = SmallIntegerField()
