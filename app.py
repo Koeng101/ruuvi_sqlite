@@ -18,7 +18,7 @@ timeout = 10
 
 while True:
     datas = RuuviTagSensor.get_data_for_sensors(macs, timeout)
-    for key, json in data.items():
+    for key, json in datas.items():
         r = Reading.create(
                 data_format = json["data_format"],
                 humidity = json["humidity"],
