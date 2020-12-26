@@ -1,5 +1,5 @@
 from ruuvitag_sensor.ruuvi import RuuviTagSensor
-from .models import *
+from models import *
 
 macs = [
     'F0:B6:9D:BA:22:65',
@@ -9,7 +9,7 @@ macs = [
 
 mac_dict = {}
 for mac in macs:
-    mac_obj, created = Sensor.get_or_create(mac=mac, force_save=True)
+    mac_obj, created = Sensor.get_or_create(mac=mac, force_insert=True)
     mac_dict[mac] = mac_obj
 db.save()
 

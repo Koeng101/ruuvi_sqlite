@@ -1,6 +1,5 @@
 from peewee import *
 import datetime
-import peeweedbevolve
 
 db = SqliteDatabase("/home/pi/sensor_data.db")
 
@@ -31,4 +30,4 @@ class Reading(BaseModel):
 models = [Sensor, Reading]
 
 if __name__ == "__main__":
-    db.evolve(models)
+    db.create_tables([Sensor, Reading])
