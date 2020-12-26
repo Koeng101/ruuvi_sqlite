@@ -32,7 +32,7 @@ while True:
                 battery = json["battery"],
                 movement_counter = json["movement_counter"],
                 measurement_sequence_number = json["measurement_sequence_number"],
-                mac = json["mac"]
+                mac = json["mac"],
                 sensor = mac_dict[key]
                 )
         r.save()
