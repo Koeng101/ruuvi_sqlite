@@ -7,12 +7,6 @@ macs = [
     'F9:CC:D3:40:0F:C9'
     ]
 
-mac_dict = {}
-for mac in macs:
-    mac_obj, created = Sensor.get_or_create(mac=mac)
-    mac_obj.save()
-    mac_dict[mac] = mac_obj
-
 # Empirically, 10 seconds has approximately been the right amount of time to wait per measurement
 timeout = 10 
 
@@ -33,7 +27,6 @@ while True:
                 movement_counter = json["movement_counter"],
                 measurement_sequence_number = json["measurement_sequence_number"],
                 mac = json["mac"],
-                sensor = mac_dict[key]
                 )
         r.save()
 

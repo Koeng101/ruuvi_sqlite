@@ -8,9 +8,6 @@ class BaseModel(Model):
     class Meta:
         database = db
 
-class Sensor(BaseModel):
-    mac = TextField()
-
 class Reading(BaseModel):
     data_format = SmallIntegerField()
     humidity = FloatField()
@@ -25,9 +22,8 @@ class Reading(BaseModel):
     movement_counter = IntegerField()
     measurement_sequence_number = IntegerField()
     mac = TextField()
-    sensor = ForeignKeyField(Sensor)
 
-models = [Sensor, Reading]
+models = [Reading]
 
 if __name__ == "__main__":
-    db.create_tables([Sensor, Reading])
+    db.create_tables([Reading])
